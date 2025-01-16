@@ -4,24 +4,17 @@ This repository contains the backend services for the Book App, providing APIs f
 
 ## Features
 
-- User authentication and authorization
 - CRUD operations for books
-- Search functionality
-- Integration with external book data sources
 
 ## Technologies Used
 
 - **Node.js** with **Express.js** for the server
 - **PostgreSQL** for the database
-- **Sequelize** as the ORM
-- **JWT** for authentication
+
 
 ## Getting Started
 
-### Prerequisites
 
-- Node.js (version X.X.X)
-- PostgreSQL (version X.X)
 
 ### Installation
 
