@@ -16,7 +16,7 @@ describe("getStoreList Controller", () => {
   });
 
   it("should return store list on success", async () => {
-    const mockData = ""; // simulate returned data 
+    const mockData = "undefined"; // simulate returned data 
     query.mockResolvedValue(mockData); //  mock the query function to return mock data 
 
     await getStoreList(req, res); // call the function

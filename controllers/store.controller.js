@@ -1,9 +1,13 @@
 const query = require("../db/connection");
 const queryList = require("../db/queries");
+const Logger = require("../services/logger.service");
 
+
+const logger = new Logger("store.controller")
 const getStoreList = async (req, res) => {
   try {
     const values = await query(queryList.GET_STORE_LIST_QUERY); // here will return full expalintaion of query and data to get data u need use 'rows' after promise resolved
+    logger.info("retun all sotres",values.rows)
     return res.status(200).send(values.rows);
   } catch (error) {
     res.send({ msg: "Error happend while retriveing stores", error });

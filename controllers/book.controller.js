@@ -1,9 +1,13 @@
 const query = require("../db/connection");
 const queryList = require("../db/queries");
+const LoggerService = require("../services/logger.service");
 
+
+const logger = new LoggerService('book.controller')
 const getBookList = async (req, res) => {
   try {
     const values = await query(queryList.GET_BOOK_LIST_QUERY); 
+    logger.info("Return book list",values.rows)
     return res.status(200).send(values.rows);
   } catch (error) {
     res.send({ msg: "Error happend while retriveing books", error });
