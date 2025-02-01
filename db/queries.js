@@ -8,7 +8,8 @@ const queryList = {
     GET_SIGNLE_BOOK: "SELECT book_id, book_title, book_description, book_author, book_publisher, book_pages, created_on, created_by, store_code FROM book.book WHERE book_id = $1;",
     CREATE_BOOK_QUERY:"INSERT INTO book.book (book_id, book_title, book_description, book_author, book_publisher, book_pages, created_on, created_by, store_code) VALUES(nextval('book.book_book_id_seq'::regclass), $1, $2, $3, $4, $5, CURRENT_TIMESTAMP, $6, $7);",
     UPDATE_BOOK_QUERY:"UPDATE book.book SET book_title=$1, book_description=$2, book_author=$3, book_publisher=$4, book_pages=$5, created_by=$6, store_code=$7 WHERE book_id=$8;",
-    DELETE_BOOK_QUERY:"DELETE FROM book.book WHERE book_id=$1;"
+    DELETE_BOOK_QUERY:"DELETE FROM book.book WHERE book_id=$1;",
+    AUDIT_QUERY : "INSERT INTO book.app_audit (audit_id, audit_action, audit_data, audit_status, audit_error, audit_by, audit_on) VALUES(nextval('book.app_audit_audit_id_seq'::regclass), $1, $2, $3, $4,$5, $6);"
 }
 
 
